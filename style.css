@@ -466,9 +466,29 @@ nav {
     display: block;
   }
 
+  /* Better mobile nav layout */
+  .nav {
+    padding: 0.8rem 3%;
+    justify-content: space-between;
+  }
   .nav-cta {
-    padding: 0.6rem 1.2rem;
-    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+    white-space: nowrap; /* Prevents text wrapping */
+  }
+
+  /* Add spacing between nav elements */
+  nav {
+    gap: 0.8rem;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  .mobile-menu-btn {
+    font-size: 1.3rem;
+    padding: 0.3rem;
   }
 
   /* Hero Section */
