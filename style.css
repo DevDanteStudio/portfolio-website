@@ -255,10 +255,11 @@ nav {
 }
 
 .stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem; /* Added this line */
 }
 
 .stat {
@@ -340,25 +341,12 @@ nav {
   margin: 0 auto;
 }
 
-/* Responsive - stack on mobile */
-@media (max-width: 768px) {
-  .projects-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-}
-
 .project-card {
   background: var(--charcoal);
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 40px rgba(201, 181, 136, 0.2);
+  /* Removed hover effects from here */
 }
 
 .project-image {
@@ -367,6 +355,13 @@ nav {
   height: 300px;
   background: var(--medium-grey);
   border-radius: 15px 15px 0 0;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+/* Hover ONLY on image */
+.project-image:hover {
+  transform: translateY(-10px);
 }
 
 .project-image img {
@@ -376,7 +371,7 @@ nav {
   transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.project-card:hover .project-image img {
+.project-image:hover img {
   transform: scale(1.1);
 }
 
@@ -394,7 +389,7 @@ nav {
   transition: opacity 0.3s ease;
 }
 
-.project-card:hover .project-overlay {
+.project-image:hover .project-overlay {
   opacity: 1;
 }
 
@@ -403,6 +398,15 @@ nav {
   text-decoration: none;
   font-weight: 600;
   font-size: 1.1rem;
+  padding: 1rem 2rem;
+  background: var(--white);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.project-link:hover {
+  background: var(--khaki);
+  transform: scale(1.05);
 }
 
 .project-info {
@@ -418,6 +422,7 @@ nav {
 .project-info p {
   color: var(--light-grey);
   margin-bottom: 1rem;
+  line-height: 1.6;
 }
 
 .project-tags {
@@ -435,6 +440,305 @@ nav {
   font-weight: 500;
 }
 
+/* MOBILE RESPONSIVE - IMPROVED */
+
+@media (max-width: 768px) {
+  /* Navigation */
+  .nav-links {
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(43, 43, 43, 0.98);
+    padding: 2rem;
+    gap: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .nav-cta {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  /* Hero Section */
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 100px 5% 50px;
+    gap: 30px;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* About Section */
+  .about {
+    padding: 60px 5%;
+  }
+
+  .about-content {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .about-text h3 {
+    font-size: 1.3rem;
+  }
+
+  .about-text p {
+    font-size: 1rem;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .stat {
+    padding: 1.5rem;
+    background: var(--dark-grey);
+    border-radius: 10px;
+  }
+
+  .about-image img {
+    height: 300px;
+  }
+
+  /* Projects Section */
+  .projects {
+    padding: 60px 5%;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .project-card {
+    margin-bottom: 1rem;
+  }
+
+  /* Testimonials */
+  .testimonial {
+    padding: 60px 5%;
+  }
+
+  .testimonial-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .testimonial-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .testimonial-avatar {
+    width: 80px;
+    height: 80px;
+  }
+
+  .testimonial-info h3 {
+    font-size: 1.3rem;
+  }
+
+  .testimonial-content p {
+    padding-left: 0;
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .quote-icon {
+    position: static;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+  }
+
+  /* FAQ Section */
+  .faq {
+    padding: 60px 5%;
+  }
+
+  .faq-question {
+    font-size: 1rem;
+    padding: 1.2rem;
+  }
+
+  .faq-answer p {
+    font-size: 0.95rem;
+  }
+
+  /* Pricing Page */
+  .pricing-hero {
+    padding: 100px 5% 40px;
+  }
+
+  .pricing-hero h1 {
+    font-size: 2rem;
+  }
+
+  .pricing-hero p {
+    font-size: 1rem;
+  }
+
+  .pricing-how-it-works {
+    padding: 60px 5%;
+  }
+
+  .pricing-section {
+    padding: 60px 5%;
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .pricing-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .pricing-card h3 {
+    font-size: 1.5rem;
+  }
+
+  .price {
+    font-size: 2rem;
+  }
+
+  /* Contact Cards */
+  .contact-options {
+    padding: 60px 5%;
+  }
+
+  .contact-methods {
+    grid-template-columns: 1fr;
+  }
+
+  /* CTA Section */
+  .cta {
+    padding: 60px 5%;
+  }
+
+  .cta-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .cta-content p {
+    font-size: 1rem;
+  }
+
+  /* Footer */
+  .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .footer-social {
+    justify-content: center;
+  }
+
+  /* Get Started Page */
+  .get-started-hero {
+    padding: 100px 5% 60px;
+  }
+
+  .get-started-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .what-to-expect-inline {
+    padding: 2rem 1.5rem;
+  }
+
+  .expect-list li {
+    font-size: 1rem;
+  }
+
+  /* General Mobile Improvements */
+  body {
+    font-size: 16px;
+  }
+
+  /* Make sure images don't overflow */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Improve touch targets */
+  button,
+  .btn,
+  a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Better spacing */
+  section {
+    padding: 60px 5%;
+  }
+}
+
+/* Extra small devices (phones in portrait) */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .btn {
+    padding: 0.9rem 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  .pricing-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .price {
+    font-size: 1.8rem;
+  }
+}
 /* FAQ Section */
 .faq {
   padding: 100px 5%;
@@ -1204,9 +1508,7 @@ footer {
     min-height: 500px;
   }
 }
-/* ========================================
-   ANIMATIONS & EFFECTS - DAY 20
-   ======================================== */
+/* ANIMATIONS & EFFECTS - DAY 20 */
 
 /* 1. SMOOTH SCROLL FOR ENTIRE WEBSITE */
 html {
@@ -1226,13 +1528,12 @@ html {
 }
 
 /* 3. ENHANCED CARD HOVER EFFECTS */
-.project-card,
+
 .pricing-card,
 .contact-card {
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.project-card:hover,
 .pricing-card:hover,
 .contact-card:hover {
   transform: translateY(-15px) scale(1.02);
