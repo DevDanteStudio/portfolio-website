@@ -367,3 +367,65 @@ document.querySelectorAll('.btn').forEach(button => {
 });
 
 console.log('%c🎨 Animations loaded!', 'color: #c9b588; font-size: 16px; font-weight: bold;');
+// ========================================
+// CONTACT FORM HANDLING
+// ========================================
+
+const contactForm = document.getElementById('contactForm');
+const formStatus = document.getElementById('formStatus');
+const submitBtn = document.querySelector('.btn-submit');
+const btnText = document.querySelector('.btn-text');
+const btnLoading = document.querySelector('.btn-loading');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        // Disable button and show loading
+        submitBtn.disabled = true;
+        btnText.style.display = 'none';
+        btnLoading.style.display = 'inline';
+        
+        // Get form data
+        const formData = new FormData(contactForm);
+        
+        try {
+            // Send to Formspree
+            const response = await fetch(contactForm.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+            
+            if (response.ok) {
+                // Success!
+                formStatus.textContent = '✓ Message sent successfully! We\'ll get back to you within 24 hours.';
+                formStatus.className = 'form-status success';
+                formStatus.style.display = 'block';
+                contactForm.reset();
+            } else {
+                // Error
+                formStatus.textContent = ' Oops! Something went wrong. Please try again or email us directly.';
+                formStatus.className = 'form-status error';
+                formStatus.style.display = 'block';
+            }
+        } catch (error) {
+            // Network error
+            formStatus.textContent = ' Network error. Please check your connection and try again.';
+            formStatus.className = 'form-status error';
+            formStatus.style.display = 'block';
+        }
+        
+        // Re-enable button
+        submitBtn.disabled = false;
+        btnText.style.display = 'inline';
+        btnLoading.style.display = 'none';
+        
+        // Hide status after 10 seconds
+        setTimeout(() => {
+            formStatus.style.display = 'none';
+        }, 10000);
+    });
+}
