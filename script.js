@@ -401,7 +401,7 @@ if (contactForm) {
             
             if (response.ok) {
                 // Success!
-                formStatus.textContent = '✓ Message sent successfully! We\'ll get back to you within 24 hours.';
+                formStatus.textContent = ' Message sent successfully!';
                 formStatus.className = 'form-status success';
                 formStatus.style.display = 'block';
                 contactForm.reset();
