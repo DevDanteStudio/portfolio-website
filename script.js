@@ -301,34 +301,7 @@ function animateStats() {
         }, stepTime);
     });
 }
-// 4. NAVBAR HIDE ON SCROLL DOWN, SHOW ON SCROLL UP
-let lastScrollPosition = 0;
-const navbar = document.querySelector('nav');
-let scrollTimeout;
 
-window.addEventListener('scroll', () => {
-    clearTimeout(scrollTimeout);
-    
-    scrollTimeout = setTimeout(() => {
-        const currentScrollPosition = window.pageYOffset;
-        
-        // Only hide/show after scrolling past 100px
-        if (currentScrollPosition > 100) {
-            if (currentScrollPosition > lastScrollPosition) {
-                // Scrolling DOWN - hide navbar
-                navbar.classList.add('nav-hidden');
-            } else {
-                // Scrolling UP - show navbar
-                navbar.classList.remove('nav-hidden');
-            }
-        } else {
-            // At top of page - always show
-            navbar.classList.remove('nav-hidden');
-        }
-        
-        lastScrollPosition = currentScrollPosition;
-    }, 50);
-});
 
 // 5. SMOOTH SCROLL FOR ANCHOR LINKS (Enhanced)
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
