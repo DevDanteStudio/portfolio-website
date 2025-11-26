@@ -367,6 +367,7 @@ document.querySelectorAll('.btn').forEach(button => {
 });
 
 console.log('%c🎨 Animations loaded!', 'color: #c9b588; font-size: 16px; font-weight: bold;');
+
 // ========================================
 // CONTACT FORM HANDLING
 // ========================================
