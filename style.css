@@ -1934,3 +1934,25 @@ nav {
     font-size: 1.6rem;
   }
 }
+@media (max-width: 768px) {
+  .get-started-btn,
+  button,
+  a[href*="get-started"],
+  .btn,
+  [class*="button"],
+  [class*="get"] {
+    padding: 12px 24px !important;
+    font-size: 15px !important;
+    min-height: auto !important;
+    height: auto !important;
+  }
+
+  header,
+  .header,
+  .hero,
+  .navbar {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    min-height: auto !important;
+  }
+}
