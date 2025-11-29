@@ -46,6 +46,12 @@ nav {
   font-weight: bold;
   color: var(--khaki);
   flex-shrink: 0;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.logo:hover {
+  opacity: 0.8;
 }
 
 .nav-links {
