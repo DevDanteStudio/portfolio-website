@@ -1475,15 +1475,18 @@ nav.nav-hidden {
     order: 3;
   }
 
-  .nav-cta {
-    padding: 0.15rem 0.45rem !important;
+.nav-cta {
+    padding: 0.1rem 0.5rem !important;
     font-size: 0.55rem !important;
     white-space: nowrap;
     flex-shrink: 0;
     order: 2;
     margin-left: auto;
     margin-right: 0.8rem;
-  }
+    line-height: 1 !important;           /* ← ADD THIS */
+    display: inline-flex !important;      /* ← ADD THIS */
+    align-items: center !important;       /* ← ADD THIS */
+    justify-content: center !important;   /* ← ADD THIS */
 }
 
 /* Extra small phones */
@@ -1497,8 +1500,8 @@ nav.nav-hidden {
   }
 
   .nav-cta {
-    padding: 0.1rem 0.4rem !important;
-    font-size: 0.5rem !important;
+    padding: 0.2rem 0.45rem 0.15rem 0.45rem !important;
+    font-size: 0.4rem !important;
     margin-right: 0.6rem;
   }
 
