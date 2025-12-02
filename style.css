@@ -1428,10 +1428,9 @@ nav.nav-hidden {
   }
 }
 /* ========================================
-   MOBILE NAVIGATION FIX
+   MOBILE NAVIGATION FIX – UPDATED
    ======================================== */
 
-/* Mobile Navigation */
 @media (max-width: 768px) {
   nav {
     padding: 0.8rem 3%;
@@ -1441,8 +1440,14 @@ nav.nav-hidden {
     align-items: center;
   }
 
+  /* 1. HIDE "Get Started" button completely on mobile */
+  .nav-cta {
+    display: none !important; /* ← THIS IS THE KEY LINE */
+  }
+
+  /* 2. Logo 20% bigger */
   .logo {
-    font-size: 1.1rem;
+    font-size: 1.32rem; /* 1.1rem × 1.2 = 1.32rem */
     flex-shrink: 0;
   }
 
@@ -1450,6 +1455,7 @@ nav.nav-hidden {
     display: none;
   }
 
+  /* 4. More transparent mobile menu + nicer blur */
   .nav-links.active {
     display: flex;
     flex-direction: column;
@@ -1457,9 +1463,9 @@ nav.nav-hidden {
     top: 100%;
     left: 0;
     right: 0;
-    background: rgba(26, 26, 26, 0.98);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: rgba(26, 26, 26, 0.88); /* ← less opaque (was 0.98) */
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
     padding: 2rem;
     gap: 1.5rem;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
@@ -1467,45 +1473,34 @@ nav.nav-hidden {
     border-bottom: 1px solid rgba(201, 181, 136, 0.2);
   }
 
+  /* 3. Hamburger 20% bigger */
   .mobile-menu-btn {
     display: block;
-    padding: 0.3rem;
-    font-size: 1.3rem;
+    padding: 0.4rem; /* slightly more tap area */
+    font-size: 1.56rem; /* 1.3rem × 1.2 = ~1.56rem */
     flex-shrink: 0;
     order: 3;
   }
 
-.nav-cta {
-    padding: 0.1rem 0.5rem !important;
-    font-size: 0.55rem !important;
-    white-space: nowrap;
-    flex-shrink: 0;
-    order: 2;
-    margin-left: auto;
-    margin-right: 0.8rem;
-    line-height: 1 !important;           /* ← ADD THIS */
-    display: inline-flex !important;      /* ← ADD THIS */
-    align-items: center !important;       /* ← ADD THIS */
-    justify-content: center !important;   /* ← ADD THIS */
-}
+  /* Extra small phones – keep the same 20% increase */
+  @media (max-width: 480px) {
+    nav {
+      padding: 0.7rem 2.5%;
+    }
 
-/* Extra small phones */
-@media (max-width: 480px) {
-  nav {
-    padding: 0.7rem 2.5%;
-  }
+    .logo {
+      font-size: 1.2rem; /* 1rem × 1.2 = 1.2rem */
+    }
 
-  .logo {
-    font-size: 1rem;
-  }
+    /* Hamburger on very small screens */
+    .mobile-menu-btn {
+      font-size: 1.44rem; /* 1.2rem × 1.2 = 1.44rem */
+      padding: 0.35rem;
+    }
 
-  .nav-cta {
-    padding: 0.2rem 0.45rem 0.15rem 0.45rem !important;
-    font-size: 0.4rem !important;
-    margin-right: 0.6rem;
-  }
-
-  .mobile-menu-btn {
-    font-size: 1.2rem;
+    /* Keep Get Started hidden */
+    .nav-cta {
+      display: none !important;
+    }
   }
 }
