@@ -403,3 +403,18 @@ if (contactForm) {
         }, 10000);
     });
 }
+
+// ========================================
+// NAVBAR SHRINK ON SCROLL
+// ========================================
+
+window.addEventListener('scroll', () => {
+    const navbar = document.querySelector('nav');
+    const currentScroll = window.pageYOffset;
+    
+    if (currentScroll > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
