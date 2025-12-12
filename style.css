@@ -30,12 +30,45 @@
   --white: #ffffff;
   --black: #0a0a0a;
 }
+
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  overflow: hidden;
+}
+
+.video-background video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: -1;
+}
+
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.6;
-  color: var(--charcoal);
-  background: var(--charcoal);
-  overflow-x: hidden;
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #c9b588;
+  background: transparent;
 }
 /* Navigation */
 nav {
@@ -57,7 +90,6 @@ nav {
   transition: padding 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Shrink nav on scroll */
 nav.scrolled {
   padding: 0.9rem 5%;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.4),
@@ -135,7 +167,7 @@ nav.scrolled {
   display: flex;
   align-items: center;
   padding: 100px 5% 50px;
-  background: var(--dark-grey);
+  background: rgba(43, 43, 43, 0.7);
   gap: 50px;
 }
 .hero-content {
@@ -233,7 +265,7 @@ nav.scrolled {
 .faq,
 .testimonial {
   padding: 100px 5%;
-  background: var(--charcoal);
+  background: rgba(58, 58, 58, 0.7);
 }
 .about-content {
   display: flex;
@@ -308,7 +340,7 @@ nav.scrolled {
 }
 .projects {
   padding: 100px 5%;
-  background: var(--dark-grey);
+  background: rgba(43, 43, 43, 0.7);
 }
 .section-subtitle {
   color: var(--light-grey);
@@ -815,6 +847,7 @@ footer {
   margin: 0 auto;
 }
 .pricing-card {
+  background: rgba(58, 58, 58, 0.8);
   padding: 2.5rem 2rem;
   border-radius: 20px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
@@ -927,6 +960,7 @@ footer {
   text-align: center;
 }
 footer {
+  background: rgba(58, 58, 58, 0.8);
   color: var(--white);
   padding: 60px 5% 30px;
 }
@@ -1453,8 +1487,6 @@ nav.nav-hidden {
     font-size: 1.6rem;
   }
 }
-
-/* MOBILE NAVIGATION FIX – UPDATED */
 
 @media (max-width: 768px) {
   nav {
