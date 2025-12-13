@@ -705,7 +705,7 @@ nav.scrolled {
 }
 .get-started-hero {
   padding: 120px 5% 80px;
-  background: var(--dark-grey);
+  background: rgba(43, 43, 43, 0.7);
   color: var(--white);
   text-align: center;
 }
@@ -768,7 +768,7 @@ nav.scrolled {
 }
 .pricing-hero {
   padding: 120px 5% 40px;
-  background: var(--dark-grey);
+  background: rgba(43, 43, 43, 0.7);
   text-align: center;
 }
 .pricing-hero h1 {
@@ -799,7 +799,7 @@ nav.scrolled {
 .contact-options,
 .pricing-how-it-works {
   padding: 80px 5%;
-  background: var(--charcoal);
+  background: rgba(58, 58, 58, 0.7);
 }
 .pricing-how-it-works h2 {
   font-size: clamp(2rem, 4vw, 2.5rem);
@@ -826,7 +826,7 @@ nav.scrolled {
 }
 .pricing-section {
   padding: 80px 5%;
-  background: var(--dark-grey);
+  background: rgba(43, 43, 43, 0.7);
 }
 .pricing-card,
 footer {
@@ -1249,7 +1249,7 @@ nav.nav-hidden {
 }
 .contact-hero {
   padding: 120px 5% 60px;
-  background: var(--dark-grey);
+  background: rgba(43, 43, 43, 0.7);
   text-align: center;
   color: var(--white);
 }
