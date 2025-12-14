@@ -104,6 +104,23 @@ nav.scrolled {
   transition: all 0.3s ease;
   letter-spacing: 0.5px;
 }
+.logo-image {
+  height: 50px;
+  width: auto;
+  transition: all 0.3s ease;
+}
+
+.logo-image:hover {
+  opacity: 0.8;
+  transform: translateY(-2px);
+}
+
+/* Make logo smaller on mobile */
+@media (max-width: 768px) {
+  .logo-image {
+    height: 35px;
+  }
+}
 
 .logo .highlight {
   color: var(--khaki);
