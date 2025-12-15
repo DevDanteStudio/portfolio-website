@@ -31,6 +31,10 @@
   --black: #0a0a0a;
 }
 
+html {
+  background-color: #0a0a0a;
+}
+
 .video-background {
   position: fixed;
   top: 0;
@@ -70,7 +74,7 @@ body {
   color: #c9b588;
   background: transparent;
 }
-/* Navigation */
+
 nav {
   position: fixed;
   top: 0;
@@ -115,7 +119,6 @@ nav.scrolled {
   transform: translateY(-2px);
 }
 
-/* Make logo smaller on mobile */
 @media (max-width: 768px) {
   .logo-image {
     height: 35px;
@@ -187,9 +190,14 @@ nav.scrolled {
   background: rgba(43, 43, 43, 0.7);
   gap: 50px;
 }
+
 .hero-content {
   flex: 1;
-  animation: 1s fadeInLeft;
+  animation: 0.5s fadeInLeft;
+}
+.hero-image {
+  flex: 1;
+  animation: 0.5s fadeInRight;
 }
 .hero-title {
   font-size: clamp(2.5rem, 6vw, 4rem);
@@ -1556,7 +1564,6 @@ nav.nav-hidden {
     order: 3;
   }
 
-  /* Extra small phones */
   @media (max-width: 480px) {
     nav {
       padding: 0.7rem 2.5%;
@@ -1590,7 +1597,7 @@ nav.nav-hidden {
   margin-right: 0.5rem;
   font-size: 1.2rem;
 }
-/* Mobile Navigation Updates */
+
 @media (max-width: 768px) {
   nav {
     padding: 1rem 4% !important;
